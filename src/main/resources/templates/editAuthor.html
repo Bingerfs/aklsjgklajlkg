@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/author" method="POST">
+    <input type="hidden" name="id" th:value="${author.id}">
+    <b>Nombre:</b><input type="text" name="nombre" th:value="${author.nombre}">
+    <b>Apellido:</b><input type="text" name="apellido" th:value="${author.apellido}">
+
+    <input type="submit" value="Guardar">
+</form>
+</body>
+</html>

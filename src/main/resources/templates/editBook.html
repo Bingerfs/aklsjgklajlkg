@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/book" method="POST">
+    <input type="hidden" name="id" th:value="${book.id}">
+    <b>Title:</b><input type="text" name="title" th:value="${book.title}">
+    <b>Category:</b><input type="text" name="category" th:value="${book.category}">
+    <b>Likes:</b><input type="text" name="likes" th:value="${book.likes}">
+    <br>
+    <b>Author:</b>
+    <select name="author">
+        <option th:value= "NULL" th:text="null" selected="selected">
+
+        </option>
+        <option th:each="author: ${authors}" th:value="${author.id}"  th:text="${author.nombre}"></option>
+    </select>
+
+    <input type="submit" value="Guardar">
+</form>
+</body>
+</html>
